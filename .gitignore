@@ -1,5 +1,6 @@
 .venv/
 data/
 app/__pycache__/
+.DS_Store
 .env
 neo4j.txt
