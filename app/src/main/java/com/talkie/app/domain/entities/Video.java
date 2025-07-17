@@ -36,5 +36,9 @@ public class Video {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
 

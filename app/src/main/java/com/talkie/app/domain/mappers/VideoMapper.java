@@ -18,4 +18,17 @@ public class VideoMapper {
                 .build();
     }
 
+    public static VideoDto toDto(Video request) {
+        if (request == null) {
+            return null;
+        }
+
+        return VideoDto.builder()
+                .title(request.getTitle())
+                .description(request.getDescription())
+                .url(request.getUrl())
+                .status(request.getStatus())
+                .build();
+    }
+
 }

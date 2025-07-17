@@ -9,11 +9,11 @@ services:
     ports:
       - 8000:8000
     environment:
-      GEMINI_API_KEY=ADD_KEY
-      NEO4J_PASSWORD=password
-      NEO4J_USER=neo4j
-      NEO4J_URL=bolt://neo4j:7687
-      BE_URL=http://be:8080/api
+      GEMINI_API_KEY: ADD API KEY
+      NEO4J_PASSWORD: password
+      NEO4J_USER: neo4j
+      NEO4J_URL: bolt://neo4j:7687
+      BE_URL: http://be:8080/api
     depends_on:
       - neo4j 
 
