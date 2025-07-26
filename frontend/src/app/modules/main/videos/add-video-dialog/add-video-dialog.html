@@ -1,0 +1,31 @@
+<h2 mat-dialog-title class="mb-4">Add a video</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="container-fluid p-0 mt-2">
+        <div class="row">
+            <div class="col-12 my-2">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Video</mat-label>
+                    <textarea matInput [(ngModel)]="title" required placeholder="Enter title"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="col-12 my-3">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Url</mat-label>
+                    <textarea matInput [(ngModel)]="url" required placeholder="Enter url"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="col-12 my-3">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput [(ngModel)]="description" required placeholder="Enter description"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" style="padding: 0px 24px 20px 24px;">
+    <button mat-button (click)="cancel()" class="me-2" >Cancel</button>
+    <button mat-raised-button color="primary" (click)="createVideo()">
+        <span>Add</span>
+    </button>
+</mat-dialog-actions>

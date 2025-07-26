@@ -24,6 +24,7 @@ public class VideoMapper {
         }
 
         return VideoDto.builder()
+                .id(request.getId())
                 .title(request.getTitle())
                 .description(request.getDescription())
                 .url(request.getUrl())

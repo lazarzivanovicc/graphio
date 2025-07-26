@@ -1,0 +1,36 @@
+<div>
+<div class="wave-container">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Single Video</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="column d-flex justify-content-center" style="z-index: 99999999999999; margin-top: 200px;">
+            <iframe [src]="safeVideoUrl" height="300px" width="400px"></iframe>
+        </div>
+        <div class="row" *ngIf="video.status == 'EXIST'">
+            <div class="column d-flex justify-content-center"  style="z-index: 99999999999999; margin-top: 50px;">
+                <mat-form-field appearance="fill" class="mx-4 w-50">
+                    <textarea matInput [(ngModel)]="question"> </textarea>
+                </mat-form-field>
+                <button mat-raised-button (click)="sendQuestion()">Send question</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column d-flex justify-content-center align-items-center"  style="z-index: 99999999999999; margin-top: 50px;" *ngIf="video.status == 'EXIST'">
+                <p style="font-size: x-large;" *ngIf="loading">Thinking...</p>
+                <p style="font-size: x-large;" *ngIf="!loading">{{answer}}</p>
+            </div>
+            <div class="column d-flex justify-content-center align-items-center"  style="z-index: 99999999999999; margin-top: 50px;" *ngIf="video.status != 'EXIST'">
+                <p style="font-size: x-large;">VIDEO DOES NOT EXISTS IN GRAPH DATABASE</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

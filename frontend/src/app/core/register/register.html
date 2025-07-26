@@ -1,0 +1,80 @@
+<div>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="star">
+        <i class="fa-regular fa-star fa-2xl"></i>
+    </div>
+    <div class="row align-items-center" style="z-index: 99999;">
+        <div class="mx-4 col-md-4 d-flex align-items-center justify-content-center" style="background-color: rgb(212, 252, 244); border-radius: 100% 30% 60% 70% / 50% 40% 70% 70%; width: 500px; height: 400px;">
+            <img src="../../../assets/register.svg" class="mx-5" [height]="300" [width]="300">
+        </div>
+        <div class="col-md-6">
+            <h1 class="d-none"></h1>
+            <h2 class="mb-4">Register</h2>
+            <form [formGroup]="userForm" (keyup.enter)="login()">
+                <mat-form-field class="w-100 mb-3 position-relative" appearance="outline" floatLabel="always">
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text" formControlName="firstName">
+                    <span matPrefix class="fa fa-signature position-absolute"
+                        style="left: 15px; top: 50%; transform: translateY(-50%);"></span>
+                    <mat-error
+                        *ngIf="userForm.controls['firstName'].invalid && userForm.controls['firstName'].hasError('required')">
+                        Please enter first name
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="w-100 mb-3 position-relative" appearance="outline" floatLabel="always">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" formControlName="lastName">
+                    <span matPrefix class="fa fa-signature position-absolute"
+                        style="left: 15px; top: 50%; transform: translateY(-50%);"></span>
+                    <mat-error
+                        *ngIf="userForm.controls['lastName'].invalid && userForm.controls['lastName'].hasError('required')">
+                        Please enter last name
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="w-100 mb-3 position-relative" appearance="outline" floatLabel="always">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email">
+                    <span matPrefix class="fa fa-user position-absolute"
+                        style="left: 15px; top: 50%; transform: translateY(-50%);"></span>
+                    <mat-error
+                        *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].hasError('required')">
+                        Please enter email
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="w-100 mb-4 position-relative" appearance="outline" floatLabel="always">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" class="border" formControlName="password">
+                    <span matPrefix class="fa fa-lock position-absolute"
+                        style="left: 15px; top: 50%; transform: translateY(-50%);"></span>
+                    <mat-error
+                        *ngIf="userForm.controls['password'].invalid && userForm.controls['password'].hasError('required')">
+                        Please enter password
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="w-100 mb-4 position-relative" appearance="outline" floatLabel="always">
+                    <mat-label>Repeat Password</mat-label>
+                    <input matInput type="password" class="border" formControlName="repeat">
+                    <span matPrefix class="fa fa-lock position-absolute"
+                        style="left: 15px; top: 50%; transform: translateY(-50%);"></span>
+                    <mat-error
+                        *ngIf="userForm.controls['repeat'].invalid && userForm.controls['repeat'].hasError('required')">
+                        Please repeat the password
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" class="w-100"
+                    (click)="login()">REGISTER</button>
+                <div class="d-flex justify-content-end">
+                    <a href="/login" color="primary" class="mt-1">Already have an account? Login
+                        here!</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
+</div>

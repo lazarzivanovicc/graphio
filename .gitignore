@@ -16,3 +16,5 @@ app/.gitignore
 *.iml
 *.ipr
 .venv
+frontend/.vscode
+frontend/node_modules/

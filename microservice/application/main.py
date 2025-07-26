@@ -373,14 +373,14 @@ def process_video_background(request: TranscriptRequest):
         topics: list[str] = [topic.label for topic in rsp_topics.topics]
 
         try:
-            response = requests.patch(f"http://localhost:8080/api/videos/{request.id}", json={"status": "EXIST"})
+            response = requests.patch(f"http://localhost:8080/api/videos/update/{request.id}", json={"status": "EXIST"})
             response.raise_for_status()
             print("Updating Status")
         except requests.exceptions.HTTPError as http_err:
             print("Error")
     except:
         print("Exception while processing video")
-        response = requests.patch(f"http://localhost:8080/api/videos/{request.id}", json={"status": "ERROR"})
+        response = requests.patch(f"http://localhost:8080/api/videos/update/{request.id}", json={"status": "ERROR"})
         response.raise_for_status()
 
 

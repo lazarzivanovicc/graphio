@@ -42,7 +42,7 @@ public class VideoController {
         return ResponseEntity.ok(videoService.getVideoById(id));
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/update/{id}")
     public ResponseEntity<VideoDto> updateVideoStatus(@PathVariable UUID id, @RequestBody StatusDto request) {
         return ResponseEntity.ok(videoService.updateStatusSingleVideo(id, request));
     }

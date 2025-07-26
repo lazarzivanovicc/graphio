@@ -32,7 +32,7 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/api/auth/login", "/api/auth/register", "/api/auth/register-super-admin", "/api/auth/register-admin") // Ako se Url poklpa bice primenjena konfiguracija iz sledecve linije
+                                .requestMatchers("/api/auth/login", "/api/auth/register", "/api/auth/register-super-admin", "/api/auth/register-admin", "api/videos/update/**") // Ako se Url poklpa bice primenjena konfiguracija iz sledecve linije
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
